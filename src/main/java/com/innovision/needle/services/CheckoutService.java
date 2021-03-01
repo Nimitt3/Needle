@@ -3,6 +3,7 @@ package com.innovision.needle.services;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.innovision.needle.models.Book;
@@ -12,6 +13,8 @@ import com.innovision.needle.repositories.BookRepository;
 import com.innovision.needle.repositories.CheckoutRepository;
 import com.innovision.needle.repositories.MemberRepository;
 
+
+@Service
 public class CheckoutService {
 	
 	@Autowired 

@@ -22,7 +22,7 @@ public interface BookRepository extends JpaRepository<Book, String>{
 		List<Book> findByBookAndAuthor(String bookName, String authorName);
 	 	
 		
-		@Query("SELECT b FROM Book b WHERE  b.book_id = ?1 AND b.count > 0")
+		@Query("SELECT b FROM Book b WHERE  b.id = ?1 AND b.count > 0")
 		Book checkAvailability(String bookId);
 	 	
 }

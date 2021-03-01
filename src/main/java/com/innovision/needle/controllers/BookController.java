@@ -63,7 +63,7 @@ public class BookController {
 		  return bookService.extendReturnDate(checkoutId, days);
 	  }
 	  
-	  @GetMapping("/{bookId")
+	  @GetMapping("/{bookId}")
 	  public boolean checkAvailability(@PathVariable String bookId) {
 			
 			return bookService.checkAvailability(bookId);
