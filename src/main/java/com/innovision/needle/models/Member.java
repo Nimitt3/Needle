@@ -9,8 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,11 +27,8 @@ public class Member {
 	
 	private String name;
 	
-	@ManyToMany
-	@JoinTable(name="user_checkout",
-				joinColumns=@JoinColumn(name="member_id"),
-				inverseJoinColumns=@JoinColumn(name="checkout_id")
-			) 
+	@OneToMany(mappedBy="member")
+	@JsonManagedReference
 	private List<Checkout> checkout;
 	
 	
